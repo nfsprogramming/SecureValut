@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- SecureVault Claude Emerald Cyber-Vault Palette -->
+    <!-- Canvas & Plates -->
+    <color name="vault_bg">#07120D</color>
+    <color name="vault_plate_start">#12241B</color>
+    <color name="vault_plate_end">#0E1A14</color>
+    <color name="vault_row_bg">#0F1D16</color>
+    <color name="vault_card_highlight">#1F3A2D</color>
+    <color name="vault_hairline">#1F3A2D</color>
+    <color name="vault_hairline_accent">#1F5A37</color>
+
+    <!-- Emerald Primary Gradient -->
+    <color name="vault_emerald_light">#6EE7B7</color>
+    <color name="vault_emerald_primary">#34D399</color>
+    <color name="vault_emerald_dark">#10B981</color>
+    <color name="vault_emerald_deep">#047857</color>
+
+    <!-- Keypad & Tonal Buttons -->
+    <color name="vault_btn_tonal">#14261D</color>
+    <color name="vault_key_start">#163026</color>
+    <color name="vault_key_end">#0F2119</color>
+
+    <!-- Text & Ink -->
+    <color name="vault_ink_primary">#EAF5EE</color>
+    <color name="vault_ink_secondary">#C4D6CB</color>
+    <color name="vault_ink_muted">#8FA89B</color>
+    <color name="vault_ink_dark">#0A0B10</color>
+
+    <!-- Status & Category Signals -->
+    <color name="vault_signal_green">#4ADE80</color>
+    <color name="vault_signal_amber">#FBBF24</color>
+    <color name="vault_signal_violet">#A78BFA</color>
+    <color name="vault_signal_danger">#F87171</color>
+    <color name="vault_border_danger">#5A2A2A</color>
+
+    <!-- Compatibility aliases for Iron / legacy references -->
+    <color name="iron_success_light">#4ADE80</color>
+    <color name="iron_danger_light">#F87171</color>
+    <color name="iron_warning_light">#FBBF24</color>
+</resources>

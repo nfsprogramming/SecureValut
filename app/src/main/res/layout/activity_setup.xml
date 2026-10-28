@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/vault_bg"
+    android:fillViewport="true"
+    android:importantForAutofill="noExcludeDescendants">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="24dp">
+
+        <!-- Shield Emblem -->
+        <FrameLayout
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:background="@drawable/bg_shield_glow">
+
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center"
+                android:contentDescription="Shield Icon"
+                android:src="@drawable/ic_shield_vault" />
+        </FrameLayout>
+
+        <!-- Brand Identity -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.05"
+            android:text="INITIALIZE VAULT"
+            android:textColor="@color/vault_ink_primary"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Create your zero-knowledge master credentials"
+            android:textColor="@color/vault_ink_muted"
+            android:textSize="12sp" />
+
+        <!-- Zero-Knowledge Architecture Plate -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_plate_card"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.08"
+                android:text="ZERO-KNOWLEDGE ARCHITECTURE"
+                android:textColor="@color/vault_emerald_primary"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:lineSpacingExtra="3dp"
+                android:text="Your PIN is never saved. A 120,000-iteration PBKDF2-HMAC-SHA256 slow hash verifies access. Master AES-256 keys are created directly inside the Android KeyStore hardware chip."
+                android:textColor="@color/vault_ink_secondary"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Form Plate -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_plate_card"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.08"
+                android:text="MASTER PIN"
+                android:textColor="@color/vault_ink_muted"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/pinInput"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field"
+                android:fontFamily="monospace"
+                android:hint="Enter 6 to 12 digits"
+                android:importantForAutofill="no"
+                android:inputType="numberPassword"
+                android:maxLength="12"
+                android:paddingHorizontal="14dp"
+                android:textColor="@color/vault_ink_primary"
+                android:textColorHint="@color/vault_ink_muted"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.08"
+                android:text="CONFIRM PIN"
+                android:textColor="@color/vault_ink_muted"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/confirmInput"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field"
+                android:fontFamily="monospace"
+                android:hint="Re-enter PIN to verify"
+                android:importantForAutofill="no"
+                android:inputType="numberPassword"
+                android:maxLength="12"
+                android:paddingHorizontal="14dp"
+                android:textColor="@color/vault_ink_primary"
+                android:textColorHint="@color/vault_ink_muted"
+                android:textSize="16sp" />
+
+            <!-- Chips Indicator Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/chipDigits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_status_pill"
+                    android:fontFamily="monospace"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:text="✓ 6–12 Digits"
+                    android:textColor="@color/vault_signal_green"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/chipMatch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_status_pill"
+                    android:fontFamily="monospace"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:text="✓ Digits Match"
+                    android:textColor="@color/vault_signal_green"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/createBtn"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_button_emerald"
+                android:fontFamily="sans-serif-medium"
+                android:text="Generate Master Key"
+                android:textAllCaps="false"
+                android:textColor="@color/vault_ink_dark"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:minLines="1"
+                android:textColor="@color/vault_ink_muted"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

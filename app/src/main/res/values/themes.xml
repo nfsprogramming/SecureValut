@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- SecureVault Claude Cyber-Emerald Theme -->
+    <style name="Theme.SecureVault" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Brand Colors -->
+        <item name="colorPrimary">@color/vault_emerald_primary</item>
+        <item name="colorOnPrimary">@color/vault_ink_dark</item>
+        <item name="colorPrimaryContainer">@color/vault_plate_start</item>
+        <item name="colorOnPrimaryContainer">@color/vault_emerald_light</item>
+
+        <!-- Surfaces & Canvas -->
+        <item name="android:colorBackground">@color/vault_bg</item>
+        <item name="colorOnBackground">@color/vault_ink_primary</item>
+        <item name="colorSurface">@color/vault_plate_end</item>
+        <item name="colorOnSurface">@color/vault_ink_primary</item>
+        <item name="colorSurfaceVariant">@color/vault_plate_start</item>
+        <item name="colorOnSurfaceVariant">@color/vault_ink_muted</item>
+
+        <!-- Hairline Borders & Outlines -->
+        <item name="colorOutline">@color/vault_hairline</item>
+        <item name="colorOutlineVariant">@color/vault_hairline</item>
+
+        <!-- System Bars -->
+        <item name="android:statusBarColor">@color/vault_bg</item>
+        <item name="android:navigationBarColor">@color/vault_bg</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">false</item>
+    </style>
+</resources>

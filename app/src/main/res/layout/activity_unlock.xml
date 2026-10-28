@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/vault_bg"
+    android:fillViewport="true"
+    android:importantForAutofill="noExcludeDescendants">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="36dp"
+        android:paddingBottom="24dp">
+
+        <!-- Shield Emblem -->
+        <FrameLayout
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:background="@drawable/bg_shield_glow">
+
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center"
+                android:contentDescription="Shield Icon"
+                android:src="@drawable/ic_shield_vault" />
+        </FrameLayout>
+
+        <!-- Brand Identity -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.05"
+            android:text="SECUREVAULT"
+            android:textColor="@color/vault_ink_primary"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Hardware-Isolated Cryptographic Storage"
+            android:textColor="@color/vault_ink_muted"
+            android:textSize="12sp" />
+
+        <!-- Integrity Signal Status Pill -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_status_pill"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp">
+
+            <View
+                android:id="@+id/integrityDot"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_status_dot_green" />
+
+            <TextView
+                android:id="@+id/integrityText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="Device verified · Secure"
+                android:textColor="@color/vault_signal_green"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Hidden / Sync PIN Input -->
+        <EditText
+            android:id="@+id/pinInput"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:alpha="0"
+            android:focusable="false"
+            android:importantForAutofill="no"
+            android:inputType="numberPassword"
+            android:maxLength="12" />
+
+        <!-- PIN Prompt & Digit Counter -->
+        <TextView
+            android:id="@+id/pinPromptText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.08"
+            android:text="ENTER MASTER PIN (6–12 DIGITS)"
+            android:textColor="@color/vault_ink_muted"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <!-- 6–12 Dynamic PIN Bullet Dots -->
+        <LinearLayout
+            android:id="@+id/pinDotsContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/pinDot1"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_pin_dot_empty" />
+
+            <View
+                android:id="@+id/pinDot2"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_pin_dot_empty" />
+
+            <View
+                android:id="@+id/pinDot3"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_pin_dot_empty" />
+
+            <View
+                android:id="@+id/pinDot4"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_pin_dot_empty" />
+
+            <View
+                android:id="@+id/pinDot5"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_pin_dot_empty" />
+
+            <View
+                android:id="@+id/pinDot6"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_pin_dot_empty" />
+
+            <View
+                android:id="@+id/pinDot7"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_pin_dot_empty"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/pinDot8"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_pin_dot_empty"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/pinDot9"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_pin_dot_empty"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/pinDot10"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_pin_dot_empty"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/pinDot11"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_pin_dot_empty"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/pinDot12"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_pin_dot_empty"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- 3x4 On-Screen Keypad -->
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:stretchColumns="0,1,2">
+
+            <TableRow android:layout_marginBottom="10dp">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnKey1"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_button_keypad"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="1"
+                    android:textColor="@color/vault_ink_primary"
+                    android:textSize="22sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnKey2"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/bg_button_keypad"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="2"
+                    android:textColor="@color/vault_ink_primary"
+                    android:textSize="22sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnKey3"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/bg_button_keypad"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="3"
+                    android:textColor="@color/vault_ink_primary"
+                    android:textSize="22sp" />
+            </TableRow>
+
+            <TableRow android:layout_marginBottom="10dp">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnKey4"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_button_keypad"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="4"
+                    android:textColor="@color/vault_ink_primary"
+                    android:textSize="22sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnKey5"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/bg_button_keypad"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="5"
+                    android:textColor="@color/vault_ink_primary"
+                    android:textSize="22sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnKey6"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/bg_button_keypad"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="6"
+                    android:textColor="@color/vault_ink_primary"
+                    android:textSize="22sp" />
+            </TableRow>
+
+            <TableRow android:layout_marginBottom="10dp">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnKey7"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_button_keypad"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="7"
+                    android:textColor="@color/vault_ink_primary"
+                    android:textSize="22sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnKey8"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/bg_button_keypad"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="8"
+                    android:textColor="@color/vault_ink_primary"
+                    android:textSize="22sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnKey9"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/bg_button_keypad"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="9"
+                    android:textColor="@color/vault_ink_primary"
+                    android:textSize="22sp" />
+            </TableRow>
+
+            <TableRow>
+                <!-- Fingerprint Biometric Key -->
+                <FrameLayout
+                    android:id="@+id/bioBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/bg_button_keypad"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="Biometric Prompt"
+                        android:src="@drawable/ic_fingerprint"
+                        android:tint="@color/vault_emerald_primary"
+                        app:tint="@color/vault_emerald_primary" />
+                </FrameLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnKey0"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/bg_button_keypad"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="0"
+                    android:textColor="@color/vault_ink_primary"
+                    android:textSize="22sp" />
+
+                <!-- Delete / Backspace Key -->
+                <FrameLayout
+                    android:id="@+id/btnKeyDel"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/bg_button_keypad"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="Backspace"
+                        android:src="@drawable/ic_backspace" />
+                </FrameLayout>
+            </TableRow>
+        </TableLayout>
+
+        <!-- Primary Action Button -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/unlockBtn"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_button_emerald"
+            android:fontFamily="sans-serif-medium"
+            android:text="Unlock with PIN"
+            android:textAllCaps="false"
+            android:textColor="@color/vault_ink_dark"
+            android:textSize="15sp" />
+
+        <!-- Status Feedback -->
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:minLines="1"
+            android:textColor="@color/vault_ink_muted"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="monospace"
+            android:text="AES-256-GCM · PBKDF2-SHA256 · FLAG_SECURE"
+            android:textColor="@color/vault_ink_muted"
+            android:textSize="10sp" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_add_file" android:title="Import file" />
+    <item android:id="@+id/action_audit" android:title="Audit log" />
+    <item android:id="@+id/action_lock" android:title="Lock now" />
+    <item android:id="@+id/action_wipe" android:title="Wipe vault" />
+</menu>
